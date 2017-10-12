@@ -54,13 +54,13 @@ int main(int argc, char *argv[]) {
 		int op1, op2;
 		char x[1][1];
 		do {
-			cout << "Âûáèðèòå îäíó èç îïåðàöèé[+.-.*,/,%,^,!,&,|,<,>]:" << endl;
+			cout << "Выбирите одну из операций[+.-.*,/,%,^,!,&,|,<,>]:" << endl;
 			cin >> *x;
 			if(x[0][0] != '+' && x[0][0] != '-' && x[0][0] != '*' &&
 			        x[0][0] != '/' && x[0][0] != '%' && x[0][0] != '^' &&
 			        x[0][0] != '!' && x[0][0] != '&' && x[0][0] != '|' &&
 			        x[0][0] != '<' && x[0][0] != '>')
-				cerr<<"Íåêîððåêòíûå Äàííûå!"<<endl;
+				cerr<<"Некорректные данные!"<<endl;
 		} while (x[0][0] != '+' && x[0][0] != '-' && x[0][0] != '*' &&
 		         x[0][0] != '/' && x[0][0] != '%' && x[0][0] != '^' &&
 		         x[0][0] != '!' && x[0][0] != '&' && x[0][0] != '|' &&
@@ -69,60 +69,60 @@ int main(int argc, char *argv[]) {
 		        x[0][0] == '%' || x[0][0] == '^' || x[0][0] == '|' || x[0][0] == '&') {
 			bool test = true;
 			do {
-				cout << "Ââåäèòå ïåðâîå ÷èñëî:" << endl;
+				cout << "Введите первое число:" << endl;
 				cin>>op1;
 				if ( !(test=cin.good()) )
-					cout << "Îøèáêà: Âû ââåëè íå ÷èñëî!" << endl;
+					cout << "Ошибка:вы ввели не число!" << endl;
 				cin.clear() ;
 				cin.ignore( numeric_limits<streamsize>::max() , '\n') ;
 			} while(!test);
 			do {
-				cout << "Ââåäèòå âòîðîå ÷èñëî:" << endl;
+				cout << "Введите второе число:" << endl;
 				cin>>op2;
 				if ( !(test=cin.good()) )
-					cout << "Îøèáêà: Âû ââåëè íå ÷èñëî!" << endl;
+					cout << "Ошибка:вы ввели не число!" << endl;
 				cin.clear() ;
 				cin.ignore( numeric_limits<streamsize>::max() , '\n') ;
 			} while(!test);
 			switch (x[0][0]) {
 				case '+':
-					cout << "Ñóììà:" << pplus(op1, op2) << endl;
+					cout << "Сумма:" << pplus(op1, op2) << endl;
 					break;
 				case '-':
-					cout << "Ðàçíîñòü:" << mminus(op1, op2) << endl;
+					cout << "Разница:" << mminus(op1, op2) << endl;
 					break;
 				case '*':
-					cout << "ïðîèçâåäåíèå:" << proiz(op1, op2) << endl;
+					cout << "Произведение:" << proiz(op1, op2) << endl;
 					break;
 				case '/':
 					if (op2 != 0)
-						cout << "÷àñòíîå:" << chast(op1, op2) << endl;
+						cout << "Частное:" << chast(op1, op2) << endl;
 					else
-						cerr << "Îøèáêà:íà0 äåëèòü íåëüçÿ!" << endl;
+						cerr << "Ошибка:на 0 делить нельзя!" << endl;
 					break;
 				case '%':
-					cout << "ìîäóëü:" << modul(op1, op2) << endl;
+					cout << "Модуль:" << modul(op1, op2) << endl;
 					break;
 				case '^':
-					cout << "Âîçâåäåíèå â ñòåïåíü:" << pw(op1, op2) << endl;
+					cout << "Возведение в степень:" << pw(op1, op2) << endl;
 					break;
 				case '&':
-					cout << "Ïîáèòîâàÿ È:" << anbit(op1, op2) << endl;
+					cout << "Побитовое И:" << anbit(op1, op2) << endl;
 					break;
 				case '|':
-					cout << "Ïîáèòîâîå ÈËÈ:" << btili(op1, op2) << endl;
+					cout << "Побитовое ИЛИ:" << btili(op1, op2) << endl;
 					break;
 				default:
-					cerr << "Îøèáêà" << endl;
+					cerr << "Ошибка" << endl;
 			}
 		}
 		if (x[0][0] == '!' || x[0][0] == '<' || x[0][0] == '>') {
 			bool test=true;
 			do {
-				cout << "Ââåäèòå ïåðâîå ÷èñëî:" << endl;
+				cout << "Введите число:" << endl;
 				cin>>op1;
 				if ( !(test=cin.good()) )
-					cout << "Îøèáêà: Âû ââåëè íå ÷èñëî!" << endl;
+					cout << "Ошибка:вы ввели не число!" << endl;
 				cin.clear() ;
 				cin.ignore( numeric_limits<streamsize>::max() , '\n') ;
 			} while(!test);
@@ -137,17 +137,17 @@ int main(int argc, char *argv[]) {
 					cout << btleft(op1)<<endl;
 					break;
 				default:
-					cerr << "Îøèáêà" << endl;
+					cerr << "Ошибка" << endl;
 			}
 		}
 		cin.sync();
 		do {
-			cout << "Åñëè âû õîòèòå ïðîäîëæèòü ââåäèòå y,åñëè çàêîí÷èòü n" << endl;
+			cout << "Если вы хотите продолжить введите y,елси хотите закончить n" << endl;
 			cin >>*choice;
 			if(choice[0][0] != 'y' && choice[0][0] != 'n')
-				cerr<<"Âû ââåëè íåâåðíûé ñèìâîë!"<<endl;
+				cerr<<"Вы ввели неверный символ!"<<endl;
 		} while (choice[0][0] != 'y' && choice[0][0] != 'n');
 	}
-	cout << "Äî ñâèäàíèÿ!" << endl;
+	cout << "До свидания!" << endl;
 	return 0;
 }
