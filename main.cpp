@@ -72,7 +72,7 @@ int main(int argc, char *argv[]) {
 				cout << "Введите первое число:" << endl;
 				cin>>op1;
 				if ( !(test=cin.good()) )
-					cout << "Ошибка:вы ввели не число!" << endl;
+					cerr << "Ошибка:вы ввели не число!" << endl;
 				cin.clear() ;
 				cin.ignore( numeric_limits<streamsize>::max() , '\n') ;
 			} while(!test);
@@ -80,7 +80,7 @@ int main(int argc, char *argv[]) {
 				cout << "Введите второе число:" << endl;
 				cin>>op2;
 				if ( !(test=cin.good()) )
-					cout << "Ошибка:вы ввели не число!" << endl;
+					cerr << "Ошибка:вы ввели не число!" << endl;
 				cin.clear() ;
 				cin.ignore( numeric_limits<streamsize>::max() , '\n') ;
 			} while(!test);
@@ -122,7 +122,7 @@ int main(int argc, char *argv[]) {
 				cout << "Введите число:" << endl;
 				cin>>op1;
 				if ( !(test=cin.good()) )
-					cout << "Ошибка:вы ввели не число!" << endl;
+					cerr << "Ошибка:вы ввели не число!" << endl;
 				cin.clear() ;
 				cin.ignore( numeric_limits<streamsize>::max() , '\n') ;
 			} while(!test);
